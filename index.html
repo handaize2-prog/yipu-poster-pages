@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>咨询海报配置器</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Poster Configurator</p>
+        <h1>咨询海报配置器</h1>
+        <p class="intro">
+          只输入主标题、资质卖点和 CTA，系统会生成适合网页展示的高端简洁海报。
+          当前模板优先保证缩略图状态下也能看清核心文字。
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button id="generateBtn" type="button">生成海报</button>
+        <button id="downloadBtn" type="button">下载当前结果</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <section class="panel form-panel">
+        <div class="panel-head">
+          <h2>内容输入</h2>
+          <p>建议只保留最关键的主标题、一个资质卖点和一个 CTA。</p>
+        </div>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>项目名</span>
+            <input id="projectName" type="text" value="可行性研究报告编制" />
+          </label>
+
+          <label class="field">
+            <span>主标题</span>
+            <input id="headline" type="text" value="可行性研究" />
+          </label>
+
+          <label class="field">
+            <span>副标题</span>
+            <input id="subheadline" type="text" value="报告编制" />
+          </label>
+
+          <label class="field">
+            <span>品牌副信息</span>
+            <input id="brandMeta" type="text" value="项目咨询 · 申报辅导 · 投融资分析" />
+          </label>
+
+          <label class="field field-wide field-hidden">
+            <span>业务说明</span>
+            <textarea id="businessSummary" rows="3">面向立项、融资、审批与汇报场景，提供专业可研报告编制与项目方案支持。</textarea>
+          </label>
+
+          <label class="field">
+            <span>优势 1</span>
+            <input id="advantage1" type="text" value="甲级资质" />
+          </label>
+
+          <label class="field">
+            <span>优势 2</span>
+            <input id="advantage2" type="text" value="" />
+          </label>
+
+          <label class="field">
+            <span>优势 3</span>
+            <input id="advantage3" type="text" value="" />
+          </label>
+
+          <label class="field">
+            <span>CTA 标题</span>
+            <input id="ctaText" type="text" value="立即咨询" />
+          </label>
+
+          <label class="field">
+            <span>CTA 副文案</span>
+            <input id="ctaMeta" type="text" value="获取专属方案" />
+          </label>
+        </div>
+
+        <div class="panel-head options-head">
+          <h2>样式选择</h2>
+          <p>少文字、大字号、居中构图，更适合放在网页卡片或 Banner 中。</p>
+        </div>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>底色</span>
+            <select id="themeSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>背景纹样</span>
+            <select id="patternSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>创意布局</span>
+            <select id="layoutSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>比例</span>
+            <select id="ratioSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>标题样式</span>
+            <select id="headlineStyleSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>CTA 模块</span>
+            <select id="ctaStyleSelect"></select>
+          </label>
+
+          <label class="field">
+            <span>资质标签</span>
+            <select id="badgeStyleSelect"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-head">
+          <h2>预览结果</h2>
+          <p>可以只出一张，也可以选择“全部比例”同时生成三张。</p>
+        </div>
+        <section id="posterGrid" class="poster-grid" aria-live="polite"></section>
+      </section>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
